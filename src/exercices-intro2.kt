@@ -1,67 +1,72 @@
-fun main(){
+fun main() {
 
     //Concatenar palabras
-    val resultadoCadena= concatenarCadenas("esto es una cadena", "otra cadena")
-    println("${resultadoCadena}")
+    val resultString  = concatenateStrings("esto es una cadena", "otra cadena")
+    println("${resultString }")
 
     //replace
-    val cadenaSustituida= sustituirPalabra("Almendra")
-    println("$cadenaSustituida")
+    val replacedString  = replaceWord("Almendra")
+    println("$replacedString ")
 
-    val borrarLetras= borrarLetra("Hola caracola")
-    println("${borrarLetras}")
+    val removedLetters  = removeLetter("hola caracolo", 'o')
+    println("${removedLetters }")
 
-    val silabasDobles= duplicarSilaba("Hola caracola")
-    println("${silabasDobles}")
+    val doubleSyllables  = duplicateSyllable("Hola caracola")
+    println("${doubleSyllables }")
 
-    val compararCaracteres= verificacionCaracteres("lale lela")
-    println("${compararCaracteres}")
+    val compareCharacters  = verifyCharacters("lale lela")
+    println("${compareCharacters }")
 
-    val compararMayusculas = comprobarMayusculas("hola","HOLA")
-    println("${compararMayusculas}")
+    val compareUppercase  = checkUppercase("hola", "HOLA")
+    println("${compareUppercase }")
 }
 
-fun concatenarCadenas(cadena1:String, cadena2:String):String
-{
-    return "$cadena1 $cadena2"
+fun concatenateStrings(phrase1: String, phrase2: String): String {
+    return "$phrase1 $phrase2"
 }
 
-fun sustituirPalabra(cadena:String):String {
-      return cadena.lowercase().replace("a","i")
-
-}
-
-fun borrarLetra(frase:String):String {
-
-    var numLetras=frase.lowercase().length
-    return frase.substring(1,numLetras-1)
+fun replaceWord(phrase1: String): String {
+    return phrase1.lowercase().replace("a", "i")
 
 }
 
-fun duplicarSilaba(frase:String):String {
+fun removeLetter(phrase1: String, word: Char): String {
 
-    var fraseRecortada= frase.substring(0,2)
-    var fraseDuplicada= fraseRecortada + fraseRecortada
-    return fraseDuplicada
+    var modifiedPh = phrase1.lowercase()
+    var numLetras = phrase1.lowercase().length
+    if (phrase1.startsWith(word)) {
+        modifiedPh = phrase1.substring(1, numLetras)
+    }
+    if (phrase1.endsWith(word)) {
+        modifiedPh = phrase1.substring(0, numLetras - 1)
+    }
+    return modifiedPh
 }
 
-fun verificacionCaracteres(frase:String):Boolean{
+fun duplicateSyllable(phrase1: String): String {
 
-    var tamanoFrase=frase.lowercase().length
-    var isEqual= true
-    var letrasIniciales=frase.substring(0,2)
-    var letrasFinales=frase.substring(tamanoFrase-2,tamanoFrase)
-    if(letrasIniciales != letrasFinales){
-        isEqual=false
+    var cutPhrase = phrase1.substring(0, 2)
+    var duplicatePhrase = cutPhrase + cutPhrase
+    return duplicatePhrase
+}
+
+fun verifyCharacters(phrase1: String): Boolean {
+
+    var phraseSize = phrase1.lowercase().length
+    var isEqual = true
+    var initialWords = phrase1.substring(0, 2)
+    var finalWords = phrase1.substring(phraseSize - 2, phraseSize)
+    if (initialWords != finalWords) {
+        isEqual = false
     }
     return isEqual
 }
 
-fun comprobarMayusculas(palabra1:String, palabra2:String):Boolean{
-    var isMayus=false
+fun checkUppercase(word1: String, word2: String): Boolean {
+    var isMayus = false
 
-    if(palabra1.lowercase()==palabra2.lowercase()){
-        isMayus=true
+    if (word1.lowercase() == word2.lowercase()) {
+        isMayus = true
     }
     return isMayus
 }
