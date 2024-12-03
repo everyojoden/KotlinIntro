@@ -87,7 +87,7 @@ fun numerosPrimos(numElementos: Int): List<Int> {
     while (listaPrimos.size < numElementos) {
         var esPrimo = true
 
-        for (i in 2..num/2) {
+        for (i in 2 until num) {
             if (num % i == 0) {
                 esPrimo = false
                 break
