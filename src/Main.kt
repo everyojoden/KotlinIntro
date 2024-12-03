@@ -49,37 +49,37 @@ fun main() {
 
     //Suma
     var resultadoSuma = suma(154, 352)
-    println("Resultado de la suma es $resultadoSuma")
+    println("Resultado de la suma es ${resultadoSuma}")
 
     //Multiplicacion
     var resultadoMultiplicacion = multiplicacion(154, 352)
-    println("Resultado de la multiplicacion es $resultadoMultiplicacion")
+    println("Resultado de la multiplicacion es ${resultadoMultiplicacion}")
 
     //Division
     var resultadoDivision = division(154.0, 352.0)
-    println("Resultado de la division es $resultadoDivision")
+    println("Resultado de la division es ${resultadoDivision}")
 
     //DivisionConParteEntera
     var resultadoDivisionParteEntera = divisionConParteEntera(777.0, 352.0)
-    println("La parte entera de la division es $resultadoDivisionParteEntera")
+    println("La parte entera de la division es ${resultadoDivisionParteEntera}")
 
     //PorcentajeVictorias
     var resultadoPorcentajes = porcentajeVictorias(14, 9)
-    println("El porcentaje de victorias es del : $resultadoPorcentajes")
+    println("El porcentaje de victorias es del : ${resultadoPorcentajes}")
 
     //Número mayor
     var resultadoMayor = numMayor(154, 352)
-    println("El mayor es : $resultadoMayor")
+    println("El mayor es : ${resultadoMayor}")
 
 
    //Calcular volumen
     var resultadoVolumen = calcularVolumen(154.5, 352.5,  233.4)
-    println("El volumen es : $resultadoVolumen")
+    println("El volumen es : ${resultadoVolumen}")
 
     //Numeros Primos
 
     var resultadoNumerosPrimos = numerosPrimos(7)
-    println("Los numeros primos son: $resultadoNumerosPrimos")
+    println("Los numeros primos son: ${resultadoNumerosPrimos}")
 
 
 
