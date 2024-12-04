@@ -2,23 +2,23 @@ fun main() {
 
     //Concatenar palabras
     val resultString  = concatenateStrings("esto es una cadena", "otra cadena")
-    println("${resultString }")
+    println(resultString)
 
     //replace
     val replacedString  = replaceWord("Almendra")
-    println("$replacedString ")
+    println(replacedString)
 
-    val removedLetters  = removeLetter("hola caracolo", 'o')
-    println("${removedLetters }")
+    val removedLetters  = removeLetter("ola caracolo", 'o')
+    println(removedLetters)
 
     val doubleSyllables  = duplicateSyllable("Hola caracola")
-    println("${doubleSyllables }")
+    println(doubleSyllables)
 
     val compareCharacters  = verifyCharacters("lale lela")
-    println("${compareCharacters }")
+    println(compareCharacters)
 
     val compareUppercase  = checkUppercase("hola", "HOLA")
-    println("${compareUppercase }")
+    println(compareUppercase)
 }
 
 fun concatenateStrings(phrase1: String, phrase2: String): String {
@@ -31,24 +31,29 @@ fun replaceWord(phrase1: String): String {
 }
 
 fun removeLetter(phrase1: String, word: Char): String {
+    var modifiedPh = phrase1
 
-    var modifiedPh = phrase1.lowercase()
-    var numLetras = phrase1.lowercase().length
-    if (phrase1.startsWith(word)) {
-        modifiedPh = phrase1.substring(1, numLetras)
+
+    if (phrase1.isNotEmpty() && phrase1.first() == word) {
+        modifiedPh = modifiedPh.substring(1)
     }
-    if (phrase1.endsWith(word)) {
-        modifiedPh = phrase1.substring(0, numLetras - 1)
+    if (phrase1.isNotEmpty() && phrase1.last() == word) {
+        modifiedPh = modifiedPh.substring(0, modifiedPh.length - 1)
     }
+
     return modifiedPh
 }
 
 fun duplicateSyllable(phrase1: String): String {
-
-    var cutPhrase = phrase1.substring(0, 2)
-    var duplicatePhrase = cutPhrase + cutPhrase
+    var duplicatePhrase = ""
+    val cutPhrase = phrase1.substring(0, 2)
+    for(i in 0 .. 1){
+        duplicatePhrase+=cutPhrase
+    }
+    //val duplicatePhrase = cutPhrase + cutPhrase
     return duplicatePhrase
 }
+
 
 fun verifyCharacters(phrase1: String): Boolean {
 
