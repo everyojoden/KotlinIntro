@@ -49,8 +49,8 @@ fun countRepeatInArray(arr: Array<Int>, num: Int):Int{
 fun sortArray(arr: Array<Int>):Array<Int>{
     var array= arr.toMutableList()
 
-    for (i in 0 until array.size) {
-        for (j in 0 until array.size - 1) {
+    for (i in 0..<array.size) {
+        for (j in 0..<array.size - 1) {
             if (array[j] < array[j + 1]) {
                 val arrayAux = array[j]
                 array[j] = array[j + 1]
@@ -61,9 +61,9 @@ fun sortArray(arr: Array<Int>):Array<Int>{
     return array.toTypedArray()
 }
 
-fun addStringArray(arr: Array<String>, elemento:String):Array<String>{
+fun addStringArray(arr: Array<String>, element:String):Array<String>{
     val array = arr.toMutableList()
-    array.add(elemento)
+    array.add(element)
     return array.toTypedArray()
 }
 
