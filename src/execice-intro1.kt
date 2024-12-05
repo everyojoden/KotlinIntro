@@ -34,8 +34,6 @@ fun main(){
     val resultadoNumerosPrimos = numerosPrimos(7)
     println("Los numeros primos son: ${resultadoNumerosPrimos}")
 
-
-
 }
 
 fun suma(num1: Int, num2: Int): Int {
