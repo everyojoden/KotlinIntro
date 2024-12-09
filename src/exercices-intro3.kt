@@ -28,7 +28,7 @@ fun addNumberInArray(arr: Array<Int>, num: Int, pos: Int):Array<Int>{
 
 fun numberCheckInArray(arr: Array<Int>, num:Int):Boolean{
 
-    var isChecked= false
+    var isChecked = false
     if(arr.contains(num)){
         isChecked=true
     }

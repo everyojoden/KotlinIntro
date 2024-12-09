@@ -1,3 +1,4 @@
+import entities.Product
 import javax.xml.transform.sax.SAXSource
 
 fun main() {
@@ -45,6 +46,26 @@ fun main() {
         }
     }
     println()
+//Objetos
+    val product = Product(
+        id = 1,
+        name = "Air Fryer",
+        quantity = 10f,
+        reference = "AF12345",
+        image = "air_fryer_image_url",
+        description = "A high-quality air fryer for healthy cooking.",
+        price = 99.99f,
+        isAvaliable = true,
+        hasDiscount = true,
+        discountPercent = 15f
+    )
+
+    product.recalculateTotalAmount()
+
+    product.name = "nuevo nombre"
+    Product.discountPercent
+    Product.sumaDosNumeros(2,2)
+
 }
 
 
