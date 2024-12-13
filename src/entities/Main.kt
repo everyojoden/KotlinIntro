@@ -7,10 +7,9 @@ class ClassRoom(val id:Int, val name:String, var students:ArrayList<Student>
         students.add(student)
     }
 
-    override fun searchStudents(allStudents: ArrayList<Student>): ArrayList<Student> {
+    override fun searchStudents(students: ArrayList<Student>): ArrayList<Student> {
 
-            //var  arrayWordA = students.filter { it.name.contains("a", ignoreCase = true)} as ArrayList<Student>
-            //return arrayWordA
+
 
         val arrayWordA = ArrayList<Student>()
         for (student in students) {
@@ -21,9 +20,21 @@ class ClassRoom(val id:Int, val name:String, var students:ArrayList<Student>
         return arrayWordA
     }
 
-    override fun filterApprovedProgressing(allStudents: ArrayList<Student>): ArrayList<Student> {
+    //var  arrayWordA = students.filter { it.name.contains("a", ignoreCase = true)}
+    //return arrayWordA
+
+    override fun filterApprovedProgressing(students: ArrayList<Student>): ArrayList<Student> {
         val filteredArray = ArrayList<Student>()
+
+        /*
         for(student in students){
+            if(student.isApproved && student.isProgressing){
+                filteredArray.add(student)
+            }
+        }
+        */
+
+        students.forEach { student ->
             if(student.isApproved && student.isProgressing){
                 filteredArray.add(student)
             }
@@ -31,13 +42,23 @@ class ClassRoom(val id:Int, val name:String, var students:ArrayList<Student>
         return filteredArray
     }
 
-    override fun isFailAndNeedHelp(allStudents: ArrayList<Student>):ArrayList<Student> {
+    override fun isFailAndNeedHelp(students: ArrayList<Student>):ArrayList<Student> {
+
         val filteredArray = ArrayList<Student>()
-        for(student in students){
+
+        /*for(student in students){
             student.calculateNeedHelp(students)
             if(!student.isApproved && student.needHelp){
                 filteredArray.add(student)
             }
+        }*/
+
+        students.forEach{ student ->
+            student.calculateNeedHelp(students)
+            if(!student.isApproved && student.needHelp){
+                filteredArray.add(student)
+            }
+
         }
         return filteredArray
     }
